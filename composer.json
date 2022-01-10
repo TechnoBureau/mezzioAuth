@@ -1,0 +1,61 @@
+{
+  "name": "technobureau/mezzio-auth",
+  "type": "library",
+  "description": "Doctrine Based Authentication for Mezzio",
+  "keywords": [
+      "mezzio",
+      "auth",
+      "authentication",
+      "doctrine",
+      "doctrine-auth",
+      "doctrine-auth-mezzio"
+  ],
+  "homepage": "https://github.com/technobureau/mezzioauth",
+  "license": "MIT",
+  "authors": [
+      {
+          "name": "Ganapathi Chidambaram",
+          "email": "ganapathi.rj@gmail.com",
+          "homepage": "http://technobureau.com",
+          "role": "Developer"
+      }
+  ],
+  "require": {
+      "php": "^7.3 || ~8.0.0 || ~8.1.0",
+      "laminas/laminas-form": "^3.1",
+      "mezzio/mezzio-authorization-acl": "^1.2",
+      "mezzio/mezzio-authentication-session": "^1.2",
+      "mezzio/mezzio-csrf": "^1.3",
+      "mezzio/mezzio-flash": "^1.3",
+      "mezzio/mezzio-session-ext": "^1.12",
+      "roave/psr-container-doctrine": "^3.1",
+      "doctrine/orm": "^2.6"
+  },
+  "conflict": {
+      "technobureau/mezzio-oauth2": "dev-main",
+      "technobureau/mezzio-pdo-oauth": "dev-main"
+  },
+  "replace": {
+    "technobureau/mezzio-oauth2": "dev-main",
+    "technobureau/mezzio-pdo-oauth": "dev-main"
+  },
+  "autoload": {
+      "psr-4": {
+          "TechnoBureau\\mezzioPDOAuth\\": "src/"
+      }
+  },
+  "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laminas": {
+            "config-provider": "TechnoBureau\\mezzioAuth\\ConfigProvider"
+        }
+    },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+      "cs-check": "phpcs",
+      "cs-fix": "phpcbf"
+  }
+}

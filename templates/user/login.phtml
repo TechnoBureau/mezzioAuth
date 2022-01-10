@@ -1,0 +1,30 @@
+<?php // templates/app/login-page.phtml
+
+echo $this->error;
+//echo $this->form($form);
+?>
+<div class="container-fluid text-center">
+<main class="form-signin">
+  <form action="" method="POST" name="login-form" id="login-form">
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+    <div class="form-floating">
+      <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <div class="checkbox mb-3">
+      <label>
+      <input type="hidden" name="rememberme" value="1">
+        <input type="checkbox" name="rememberme" value="1"> Remember me
+      </label>
+    </div>
+    <input type="hidden" name="csrf" value="<?php echo $token ?>">
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+  </form>
+</main>
+</div>

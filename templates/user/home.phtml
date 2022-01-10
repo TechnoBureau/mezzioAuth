@@ -1,0 +1,116 @@
+<?php $this->headTitle('Home'); ?>
+
+<div class="jumbotron">
+<div class="container">
+    <h1 class="display-3">A Technology Intelligence!</h1>
+    <p>We are here to share our knowledge through technical articles in a easiest way and also will provide DevOps Tools, Technology News and other debate about various technologies.</p>
+</div>
+</div>
+
+<div class="container-fluid">
+<div class="row">
+    <div class="col-md-4">
+        <h2>
+            <a href="https://docs.mezzio.dev/mezzio/getting-started/features" target="_blank">
+                <i class="fa fa-bolt"></i> Agile &amp; Lean
+            </a>
+        </h2>
+        <p>
+            Mezzio is fast, small and perfect for rapid application development, prototyping and api's.
+            You decide how you extend it and choose the best packages from major framework or standalone projects.
+        </p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>
+            <a href="https://github.com/laminas/laminas-diactoros" target="_blank">
+                <i class="fa fa-exchange-alt"></i> HTTP Messages
+            </a>
+        </h2>
+        <p>
+            HTTP messages are the foundation of web development. Web browsers and HTTP clients such as cURL create
+            HTTP request messages that are sent to a web server, which provides an HTTP response message.
+            Server-side code receives an HTTP request message, and returns an HTTP response message.
+        </p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>
+            <a href="https://github.com/laminas/laminas-stratigility" target="_blank">
+                <i class="fa fa-dot-circle"></i> Middleware
+            </a>
+        </h2>
+        <p>
+            Middleware is code that exists between the request and response, and which can take the incoming
+            request, perform actions based on it, and either complete the response or pass delegation on to the
+            next middleware in the queue. Your application is easily extended with custom middleware created by
+            yourself or <a href="https://packagist.org/search/?q=middleware" target="_blank">others</a>.
+        </p>
+    </div>
+</div>
+</div>
+
+<div class="container-fluid px-4"><div class="row">
+    <div class="col-md-4 order-sm-1">
+        <h2>
+            <a href="https://docs.mezzio.dev/mezzio/features/container/intro" target="_blank">
+                <i class="fa fa-cube"></i> Containers
+            </a>
+        </h2>
+        <p>
+            Mezzio promotes and advocates the usage of Dependency Injection/Inversion of Control containers
+            when writing your applications. Mezzio supports multiple containers which typehints against
+            <a href="https://github.com/php-fig/container" target="_blank">PSR Container</a>.
+        </p>
+    </div>
+    <div class="col-md-4 order-sm-2">
+        <p>
+            <a class="btn btn-secondary" href="<?= $this->containerDocs ?>" role="button" target="_blank">
+                Get started with <?= $this->containerName ?>.
+            </a>
+        </p>
+    </div>
+
+    <div class="col-md-4 order-sm-1">
+        <h2>
+            <a href="https://docs.mezzio.dev/mezzio/features/router/intro" target="_blank">
+                <i class="fa fa-plane"></i> Routers
+            </a>
+        </h2>
+        <p>
+            One fundamental feature of mezzio is that it provides mechanisms for implementing dynamic
+            routing, a feature required in most modern web applications. Mezzio ships with multiple adapters.
+        </p>
+    </div>
+    <div class="col-md-4 order-sm-2">
+        <?php if (isset($this->routerName)) : ?>
+            <p>
+                <a class="btn btn-secondary" href="<?= $this->routerDocs ?>" role="button" target="_blank">
+                    Get started with <?= $this->routerName ?>.
+                </a>
+            </p>
+        <?php endif; ?>
+    </div>
+    <div class="col-md-4 order-sm-1">
+        <h2>
+            <a href="https://docs.mezzio.dev/mezzio/features/template/laminas-view" target="_blank">
+                <i class="fa fa-edit"></i> Templating
+            </a>
+        </h2>
+        <p>
+            By default, no middleware in Mezzio is templated. We do not even provide a default templating
+            engine, as the choice of templating engine is often very specific to the project and/or organization.
+            However, Mezzio does provide abstraction for templating, which allows you to write middleware that
+            is engine-agnostic.
+        </p>
+    </div>
+    <div class="col-md-4 order-sm-2">
+        <?php if (isset($this->templateName)) : ?>
+            <p>
+                <a class="btn btn-secondary" href="<?= $this->templateDocs ?>" role="button" target="_blank">
+                    Get started with <?= $this->templateName ?>.
+                </a>
+            </p>
+        <?php endif; ?>
+    </div>
+</div></div>

@@ -6,7 +6,7 @@ use TechnoBureau\mezzioAuth\Entity\AuthUser;
 use Mezzio\Authentication\UserInterface;
 use Mezzio\Authentication\UserRepositoryInterface as MezzioAuthInterface;
 
-class AuthUserRepository extends \Doctrine\ORM\EntityRepository
+class AuthUserRepository extends \Doctrine\ORM\EntityRepository implements MezzioAuthInterface
 {
   public function authenticate(string $credential, string $password = null): ?UserInterface
     {

@@ -35,10 +35,6 @@
       "technobureau/mezzio-oauth2": "dev-main",
       "technobureau/mezzio-pdo-oauth": "dev-main"
   },
-  "replace": {
-    "technobureau/mezzio-oauth2": "dev-main",
-    "technobureau/mezzio-pdo-oauth": "dev-main"
-  },
   "autoload": {
       "psr-4": {
           "TechnoBureau\\mezzioPDOAuth\\": "src/"

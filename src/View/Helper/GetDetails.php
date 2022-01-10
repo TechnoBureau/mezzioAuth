@@ -14,7 +14,7 @@ class GetDetails extends AbstractHelper
 {
     use SessionTrait;
 
-    public function __invoke(): array
+    public function __invoke(): string
     {
         $session     = new Session($this->getSession());
         $hasLoggedIn = $session->has(UserInterface::class);

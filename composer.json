@@ -37,7 +37,7 @@
   },
   "autoload": {
       "psr-4": {
-          "TechnoBureau\\mezzioPDOAuth\\": "src/"
+          "TechnoBureau\\mezzioAuth\\": "src/"
       }
   },
   "config": {

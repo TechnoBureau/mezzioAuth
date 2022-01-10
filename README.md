@@ -1,6 +1,6 @@
-# Mezzio PDO Based Authentication
+# Mezzio Doctrine Based Authentication
 
-It's using mezzio authentication based on PDO Adapter. For migration or table creation
+It's using mezzio authentication based on Doctrine ORM. For migration or table creation
 using doctrine orm
 
 * Add below entry on routes.php to register router for authentication

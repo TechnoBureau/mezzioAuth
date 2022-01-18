@@ -97,7 +97,8 @@ class ConfigProvider
                 PrgMiddleware::class    => InvokableFactory::class,
                 UserMiddleware::class   => UserMiddlewareFactory::class,
                 AuthenticationInterface::class => PhpSessionFactory::class,
-                AuthUserRepository::class => AuthUserRepositoryFactory::class
+                AuthUserRepository::class => AuthUserRepositoryFactory::class,
+                Handler\UserHandler::class => Handler\UserHandlerFactory::class,
             ],
         ];
     }
@@ -185,5 +186,11 @@ class ConfigProvider
             AuthorizationMiddleware::class,
             LogoutHandler::class,
         ], 'logout.access');
+
+        $app->get('/users', [
+            //AuthenticationMiddleware::class,
+            //AuthorizationMiddleware::class,
+            Handler\UserHandler::class,
+        ], 'users.index');
     }
 }

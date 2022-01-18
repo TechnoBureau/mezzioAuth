@@ -6,7 +6,7 @@ namespace TechnoBureau\mezzioAuth\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Mezzio\Authentication\UserInterface as MezzioUserInterface;
 
-#[ORM\Table(name: "auth_user")]
+#[ORM\Table(name: 'auth_user', uniqueConstraints: [new ORM\UniqueConstraint(name: 'auth_user_username_key', columns: ['username'])], indexes: [new ORM\Index(name: 'auth_user_username_6821ab7c_like', columns: ['username'])])]
 #[ORM\Entity(repositoryClass: \TechnoBureau\mezzioAuth\Repository\AuthUserRepository::class)]
 class AuthUser implements MezzioUserInterface
 {
@@ -34,6 +34,15 @@ class AuthUser implements MezzioUserInterface
 
     private array $details = [];
 
+    // #[ORM\ManyToMany(targetEntity:"AuthGroup", mappedBy:"users") ]
+    // protected $groups;
+
+    #[ORM\ManyToMany(targetEntity: 'AuthGroup', inversedBy: 'users')]
+    #[ORM\JoinTable(name: 'auth_user_group')]
+    #[ORM\JoinColumn(name: 'user_id', referencedColumnName: 'id')]
+    #[ORM\InverseJoinColumn(name: 'group_id', referencedColumnName: 'id')]
+    private $groups;
+
     public function __construct()
     {
         $this->id = 0;
@@ -41,6 +50,7 @@ class AuthUser implements MezzioUserInterface
         $this->first_name = '';
         $this->password = '';
         $this->role = '';
+        $this->groups = new ArrayCollection();
     }
 
     public function setId(int $id): self
@@ -152,5 +162,23 @@ class AuthUser implements MezzioUserInterface
         /** @psalm-suppress MixedReturnTypeCoercion */
         $this->details['first_name']=$this->first_name;
         return $this->details;
+    }
+
+    /**
+     * Returns groups for this user.
+     * @return array
+     */
+    public function getGroups()
+    {
+        return $this->groups;
+    }
+
+    /**
+     * Adds a new group to this user.
+     * @param $group
+     */
+    public function addGroup($group)
+    {
+        $this->group[] = $group;
     }
 }
